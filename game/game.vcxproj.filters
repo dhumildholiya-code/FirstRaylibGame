@@ -12,28 +12,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\component.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\entity.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\entity_manager.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\math\utility.h">
-      <Filter>include\math</Filter>
-    </ClInclude>
     <ClInclude Include="include\math\vec2.h">
       <Filter>include\math</Filter>
     </ClInclude>
+    <ClInclude Include="include\hitman.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\entity.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\hitman.cpp" />
   </ItemGroup>
 </Project>

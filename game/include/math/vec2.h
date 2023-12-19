@@ -1,11 +1,18 @@
 #pragma once
 #include<iostream>
-#include "utility.h"
 
 class Vec2 {
 public:
 	float x;
 	float y;
+
+public:
+	static Vec2 zero() { return Vec2(0.0f, 0.0f); }
+	static Vec2 one() { return Vec2(1.0f, 1.0f); }
+	static Vec2 right() { return Vec2(1.0f, 0.0f); }
+	static Vec2 left() { return Vec2(-1.0f, 0.0f); }
+	static Vec2 up() { return Vec2(0.0f, -1.0f); }
+	static Vec2 down() { return Vec2(0.0f, 1.0f); }
 
 public:
 	Vec2(float xin, float yin) :
@@ -25,6 +32,7 @@ public:
 	}
 	void normalize() {
 		float mag = magnitude();
+		if (abs(mag - 0.0f) < 0.001f) return;
 		x = x / mag;
 		y = y / mag;
 	}
@@ -54,12 +62,6 @@ public:
 	}
 
 	//Operator Overloading
-	bool operator == (const Vec2& rhs) const {
-		return floatEq(x, rhs.x) && floatEq(y, rhs.y);
-	}
-	bool operator != (const Vec2& rhs) const {
-		return !floatEq(x, rhs.x) || !floatEq(y, rhs.y);
-	}
 	Vec2 operator + (const Vec2& rhs) const {
 		return Vec2(x + rhs.x, y + rhs.y);
 	}
@@ -83,5 +85,10 @@ public:
 	}
 	void operator /= (const Vec2& rhs) {
 		x /= rhs.x; y /= rhs.y;
+	}
+
+	friend std::ostream& operator << (std::ostream& os, const Vec2& vec) {
+		os << "Vec2:" << "(" << vec.x << ", " << vec.y << ")";
+		return os;
 	}
 };
