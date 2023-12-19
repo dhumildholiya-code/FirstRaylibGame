@@ -97,10 +97,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\application.h" />
+    <ClInclude Include="include\editor.h" />
+    <ClInclude Include="include\game.h" />
     <ClInclude Include="include\hitman.h" />
     <ClInclude Include="include\math\vec2.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\editor.cpp" />
+    <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\hitman.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
