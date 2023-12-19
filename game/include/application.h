@@ -1,6 +1,7 @@
 #pragma once
 #include "math/vec2.h"
 #include "raylib.h"
+#include "raymath.h"
 
 class IApplication
 {

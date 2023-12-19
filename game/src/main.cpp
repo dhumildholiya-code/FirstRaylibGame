@@ -4,7 +4,7 @@
 
 int main(void)
 {
-	bool isEditor = false;
+	bool isEditor = true;
 	IApplication* app = nullptr;
 
 	if (isEditor)
