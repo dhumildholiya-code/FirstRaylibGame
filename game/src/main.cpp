@@ -3,10 +3,17 @@
 #include "math/vec2.h"
 #include "hitman.h"
 
-void drawVec(const Vec2& vec, const Color& col) {
+void DrawVec(const Vec2& vec, const Color& col) {
 	Vec2 origin;
 	DrawCircle(vec.x, vec.y, 4.0, col);
 	DrawLine(origin.x, origin.y, vec.x, vec.y, col);
+}
+void SetupCamera(Camera2D& cam)
+{
+	cam.offset.x = 0.0f; cam.offset.y = 0.0f;
+	cam.rotation = 0.0f;
+	cam.target.x = 0.0f; cam.target.y = 0.0f;
+	cam.zoom = 1.0f;
 }
 
 int main(void)
@@ -24,10 +31,7 @@ int main(void)
 	}
 
 	Camera2D cam;
-	cam.offset.x = 0.0f; cam.offset.y = 0.0f;
-	cam.rotation = 0.0f;
-	cam.target.x = 0.0f; cam.target.y = 0.0f;
-	cam.zoom = 1.0f;
+	SetupCamera(cam);
 
 	Texture2D floorTileSet = LoadTexture("resources/tilesheet.png");
 	Hitman* hitman = new Hitman("resources/hitman1_gun.png", Vec2(sWidth * .5f, sHeight * .5f), 100.0f);
