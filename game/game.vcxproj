@@ -102,12 +102,17 @@
     <ClInclude Include="include\game.h" />
     <ClInclude Include="include\hitman.h" />
     <ClInclude Include="include\math\vec2.h" />
+    <ClInclude Include="include\map\map.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\editor.cpp" />
     <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\hitman.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\map\map.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\map\tiles.map" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

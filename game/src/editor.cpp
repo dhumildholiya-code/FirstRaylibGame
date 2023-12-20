@@ -12,6 +12,12 @@ Editor::~Editor()
 void Editor::LoadTileMap()
 {
 	_tileMap = LoadTexture("resources/tilesheet.png");
+	Map map = Map();
+	//map.AddTile(Rectangle{ 0,0,64,64 }, "Grass_1");
+	//map.AddTile(Rectangle{ 64,0,64,64 }, "Grass_2");
+	map.Print();
+	map.Deserialize();
+	map.Print();
 }
 
 void Editor::DrawGrid()
@@ -27,6 +33,8 @@ void Editor::DrawGrid()
 	{
 		DrawLine(0, i * gridSize, _tileMap.width, i * gridSize, BLUE);
 	}
+
+	DrawRectangle(_mousePos.x * gridSize, _mousePos.y * gridSize, gridSize, gridSize, Color{ 255,0,0,100 });
 }
 
 void Editor::PanCamera()
@@ -52,6 +60,7 @@ void Editor::Run()
 	{
 		float dt = GetFrameTime();
 		PanCamera();
+		_mousePos = Vec2(floorf(GetMouseX() * 1.0f / gridSize), floorf(GetMouseY() * 1.0f / gridSize));
 
 		BeginDrawing();
 		ClearBackground(RAYWHITE);
